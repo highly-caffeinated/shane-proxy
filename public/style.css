@@ -1,0 +1,23 @@
+.header {
+  margin: 0;
+  max-width: 100%;
+}
+
+.croxy-template {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.col1 {
+  width: 100%;
+}
+
+.col2 {
+  width: 100%;
+}
+
+#reviews {
+  display: block;
+}
