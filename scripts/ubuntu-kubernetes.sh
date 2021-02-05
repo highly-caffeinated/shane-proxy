@@ -4,7 +4,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
-sudo apt-get install -y docker-ce
+sudo apt-get install -y docker-ce docker-ce-cli
 
 cat <<EOF | sudo tee /etc/docker/daemon.json
 {
@@ -18,8 +18,14 @@ cat <<EOF | sudo tee /etc/docker/daemon.json
 EOF
 
 sudo mkdir -p /etc/systemd/system/docker.service.d
+
+
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
+
+# sudo apt-get install -y containerd.io
+# sudo systemctl enable containerd.service
+# sudo systemctl start containerd.service
 
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list

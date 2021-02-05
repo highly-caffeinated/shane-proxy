@@ -1,9 +1,7 @@
 version: 0.1
 os: linux
 files:
-  - source: scripts/security-settings-ubuntu.sh
-    destination: /home/ubuntu/
-  - source: scripts/docker-kubernetes.sh
+  - source: scripts
     destination: /home/ubuntu/
 hooks:
   BeforeInstall:
