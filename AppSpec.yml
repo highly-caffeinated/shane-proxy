@@ -1,0 +1,10 @@
+version: 0.1
+os: linux
+files:
+  - source: scripts
+    destination: /home/ubuntu/
+hooks:
+  BeforeInstall:
+    - location: scripts/security-settings-ubuntu.sh
+    - location: scripts/deploy-docker-ubuntu.sh
+
